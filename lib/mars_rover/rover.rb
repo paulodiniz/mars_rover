@@ -30,12 +30,23 @@ module MarsRover
       MarsRover::Position.move(self)
     end
 
+    def run_command(command)
+      case command
+      when 'L'
+        turn_left
+      when 'R'
+        turn_right
+      when 'M'
+        move
+      end
+    end
+
     private
     def valid_position?
-      x < plateau.x_upper_limit &&
-      x > plateau.x_lower_limit &&
-      y < plateau.y_upper_limit &&
-      y > plateau.y_lower_limit
+      x <= plateau.x_upper_limit &&
+      x >= plateau.x_lower_limit &&
+      y <= plateau.y_upper_limit &&
+      y >= plateau.y_lower_limit
     end
   end
 

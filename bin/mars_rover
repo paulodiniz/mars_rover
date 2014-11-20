@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'mars_rover'
+MarsRover::Runner.new(ARGV[0])

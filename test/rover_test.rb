@@ -120,4 +120,33 @@ class RoverTest < ActiveSupport::TestCase
     assert_equal 14, rover.y
   end
 
+  test 'cannot go beyond the plateau' do
+    plateau = MarsRover::Plateau.new(50, 50)
+    rover = MarsRover::Rover.new(50, 50, 'N', plateau) 
+    rover.move
+
+    assert_equal 50, rover.x
+    assert_equal 50, rover.y
+    assert_equal 'N', rover.direction
+
+    rover = MarsRover::Rover.new(50, 0, 'S', plateau) 
+    rover.move
+    assert_equal 50, rover.x
+    assert_equal 0, rover.y
+    assert_equal 'S', rover.direction
+
+
+    rover = MarsRover::Rover.new(0, 30, 'W', plateau) 
+    rover.move
+    assert_equal 0, rover.x
+    assert_equal 30, rover.y
+    assert_equal 'W', rover.direction
+
+    rover = MarsRover::Rover.new(50, 30, 'E', plateau) 
+    rover.move
+    assert_equal 50, rover.x
+    assert_equal 30, rover.y
+    assert_equal 'E', rover.direction
+  end
+
 end

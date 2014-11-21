@@ -21,7 +21,9 @@ module MarsRover
         end
 
         @rovers << rover
-        output_file.write "#{rover.x} #{rover.y} #{rover.direction}\n"
+        output = "#{rover.x} #{rover.y} #{rover.direction}\n"
+        output_file.write output
+        puts output
       end
     end
   end

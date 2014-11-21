@@ -6,10 +6,10 @@ require 'mars_rover/version'
 Gem::Specification.new do |spec|
   spec.name          = "mars_rover"
   spec.version       = MarsRover::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Paulo Diniz"]
+  spec.email         = ["paulodiniz@gmail.com"]
+  spec.summary       = %q{Mars Landing Rover solution}
+  spec.description   = %q{Solving the Thoughtworks Mars Landing Rover problem}
   spec.homepage      = ""
   spec.license       = "MIT"
 
